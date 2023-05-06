@@ -1,38 +1,89 @@
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;" >
+  <form [formGroup]="myForm"  (ngSubmit)="sendData()" >
   <ul class="list-group list-group-light list-group-small">
     <li class="list-group-item px-3">
       <div class="form-outline">
-        <input type="text" id="typeText" class="form-control" />
-        <label class="form-label" for="typeText">Text input</label>
-      </div>
-    </li>
-   
-    <li class="list-group-item px-3">
-      <div class="form-outline">
-        <input type="text" id="typeText" class="form-control" />
-        <label class="form-label" for="typeText">Text input</label>
+        <input formControlName="name" type="text" id="Name" class="form-control" />
+        <label class="form-label" for="typeText">Name</label>
       </div>
     </li>
     <li class="list-group-item px-3">
       <div class="form-outline">
-        <input type="text" id="typeText" class="form-control" />
-        <label class="form-label" for="typeText">Text input</label>
+        <input formControlName="lastname"  type="text" id="lastname" class="form-control" />
+        <label class="form-label" for="typeText">Lastname</label>
       </div>
     </li>
     <li class="list-group-item px-3">
       <div class="form-outline">
-        <input type="text" id="typeText" class="form-control" />
-        <label class="form-label" for="typeText">Text input</label>
+        <input formControlName="tel"  type="text" id="tel" class="form-control" />
+        <label class="form-label" for="typeText">tel</label>
       </div>
     </li>
     <li class="list-group-item px-3">
       <div class="form-outline">
-        <input type="text" id="typeText" class="form-control" />
-        <label class="form-label" for="typeText">Text input</label>
+        <input type="text" formControlName="work"  id="work" class="form-control" />
+        <label class="form-label" for="typeText">Work</label>
       </div>
     </li>
+    <li class="list-group-item px-3">
+      <div class="form-outline">
+        <input formControlName="mail"  type="text" id="mail" class="form-control" />
+        <label class="form-label" for="typeText">Mail</label>
+      </div>
+    </li>
+    <li class="list-group-item px-3">
+      <div class="form-outline">
+        <input type="text"  formControlName="mail" id="adress" class="form-control" />
+        <label class="form-label" for="typeText"> Adress</label>
+      </div>
+    </li>
+    <li class="list-group-item px-3">
+      <div class="form-outline">
+        <input type="text" formControlName="age"  id="age" class="form-control" />
+        <label class="form-label" for="typeText">Age</label>
+      </div>
+    </li>
+    <li class="list-group-item px-3">
+      <div class="form-outline">
+        <input type="text" id="skills" formControlName="skills"  class="form-control" />
+        <label class="form-label" for="typeText">Skills</label>
+      </div>
+    </li>
+    <li class="list-group-item px-3">
+      <div class="form-outline">
+        <input type="text" id="language" class="form-control" />
+        <label class="form-label" for="typeText">language</label>
+      </div>
+    </li>
+    <div class="form-outline">
+      <textarea class="form-control" formControlName="experience"  id="experience" rows="4"></textarea>
+      <label class="form-label" for="textAreaExample">Experience</label>
+      <input id="dateDbExp" type="date" value="2017-06-01">
+      <input id="dateFnExp" type="date" value="2017-06-01">
+
+    </div>
+    <br>
+
+    <div class="form-outline">
+      <textarea class="form-control" formControlName="education"  id="education" rows="4"></textarea>
+      <label class="form-label" for="textAreaExample">Education</label>
+      <input id="dateDbEduc" type="date" value="2017-06-01">
+      <input id="dateFnEduc" type="date" value="2017-06-01">
+    </div>
+    <br>
+
     
+
+ 
+
     
+    <div class="form-outline">
+      <textarea class="form-control" formControlName="about"  id="about" rows="4"></textarea>
+      <label class="form-label" for="textAreaExample">About</label>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary">Button</button>
+
     </ul>
 
 
@@ -41,11 +92,9 @@
 
 
 
+    
 
 
 
-
-
-
-  <div class="card-footer bg-light px-3">Card footer</div>
-</div>
+  </form>
+  </div>

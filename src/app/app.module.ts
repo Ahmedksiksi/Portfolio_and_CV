@@ -13,6 +13,9 @@ import { SkillsComponent } from './skills/skills.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { FormComponent } from './form/form.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { CvComponent } from './cv/cv.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +30,14 @@ import { LoginComponent } from './login/login.component';
     AboutMeComponent,
     FormComponent,
     LoginComponent,
+    CvComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
