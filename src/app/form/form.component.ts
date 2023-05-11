@@ -28,16 +28,7 @@ export class FormComponent implements OnInit{
   
   ngOnInit(): void {
    
-      // this.dataService.all().subscribe({
-      //   next:(res)=>{
-      //     this.profiles=res;
-      //     console.log(res);
-      //   },
-      //   error:(err)=>{
-      //     console.log(err)
-      //   }
-      // })
-    
+     
   }
 
 
