@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DataServiceService } from '../data-service.service';
+import { Profile } from '../models/Profile';
 
 @Component({
   selector: 'app-form',
@@ -8,20 +9,21 @@ import { DataServiceService } from '../data-service.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit{
-  profile = {
-    name:'',
-    lastname:'',
-    tel:0,
-    mail:'',
-    adress:'',
-    age: 0,
-    education:'',
-    experience:'',
-    Skills:'',
-    about:'',
-    language:'',
-    work:''
-  }
+  @Input() profile!: Profile;
+  // profile = {
+  //   name:'',
+  //   lastname:'',
+  //   tel:0,
+  //   mail:'',
+  //   adress:'',
+  //   age: 0,
+  //   education:'',
+  //   experience:'',
+  //   Skills:'',
+  //   about:'',
+  //   language:'',
+  //   work:''
+  // }
   profiles: any;
 
   constructor(private dataService:DataServiceService){}
