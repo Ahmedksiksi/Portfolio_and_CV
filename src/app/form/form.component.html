@@ -1,95 +1,181 @@
 <div class="card" style="width: 30rem;" >
-  <form [formGroup]="myForm"  (ngSubmit)="sendData()" >
-  <ul class="list-group list-group-light list-group-small">
-    <li class="list-group-item px-3">
-      <div class="form-outline">
-        <input formControlName="name" type="text" id="Name" class="form-control" />
-        <label class="form-label" for="typeText">Name</label>
-      </div>
-    </li>
-    <li class="list-group-item px-3">
-      <div class="form-outline">
-        <input formControlName="lastname"  type="text" id="lastname" class="form-control" />
-        <label class="form-label" for="typeText">Lastname</label>
-      </div>
-    </li>
-    <li class="list-group-item px-3">
-      <div class="form-outline">
-        <input formControlName="tel"  type="text" id="tel" class="form-control" />
-        <label class="form-label" for="typeText">tel</label>
-      </div>
-    </li>
-    <li class="list-group-item px-3">
-      <div class="form-outline">
-        <input type="text" formControlName="work"  id="work" class="form-control" />
-        <label class="form-label" for="typeText">Work</label>
-      </div>
-    </li>
-    <li class="list-group-item px-3">
-      <div class="form-outline">
-        <input formControlName="mail"  type="text" id="mail" class="form-control" />
-        <label class="form-label" for="typeText">Mail</label>
-      </div>
-    </li>
-    <li class="list-group-item px-3">
-      <div class="form-outline">
-        <input type="text"  formControlName="mail" id="adress" class="form-control" />
-        <label class="form-label" for="typeText"> Adress</label>
-      </div>
-    </li>
-    <li class="list-group-item px-3">
-      <div class="form-outline">
-        <input type="text" formControlName="age"  id="age" class="form-control" />
-        <label class="form-label" for="typeText">Age</label>
-      </div>
-    </li>
-    <li class="list-group-item px-3">
-      <div class="form-outline">
-        <input type="text" id="skills" formControlName="skills"  class="form-control" />
-        <label class="form-label" for="typeText">Skills</label>
-      </div>
-    </li>
-    <li class="list-group-item px-3">
-      <div class="form-outline">
-        <input type="text" id="language" class="form-control" />
-        <label class="form-label" for="typeText">Language</label>
-      </div>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Language" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-success" type="button" id="button-addon2">Add</button>
-      </div>
-    </li>
-    <div class="form-outline">
-      <textarea class="form-control" formControlName="experience"  id="experience" rows="4"></textarea>
-      <label class="form-label" for="textAreaExample">Experience</label>
-      <input id="dateDbExp" type="date" value="2017-06-01">
-      <input id="dateFnExp" type="date" value="2017-06-01">
-      <button class="btn btn-outline-success" type="button" id="button-addon2">Add</button>
+    <form [formGroup]="myForm" (ngSubmit)="valid()">
 
-    </div>
-    <br>
+    <ul class="list-group list-group-light list-group-small">
+      <li class="list-group-item px-3">
+        <div class="form-outline">
+          <input formControlName="firstname" type="text" id="Name" class="form-control" />
+          <label class="form-label" for="typeText">Firstname</label>
+        </div>
+      </li>
+      <li class="list-group-item px-3">
+        <div class="form-outline">
+          <input formControlName="lastname"  type="text" id="lastname" class="form-control" />
+          <label class="form-label" for="typeText">Lastname</label>
+        </div>
+      </li>
+      <li class="list-group-item px-3">
+        <div class="form-outline">
+          <input formControlName="tel"  type="text" id="tel" class="form-control" />
+          <label class="form-label" for="typeText">tel</label>
+        </div>
+      </li>
+      <li class="list-group-item px-3">
+        <div class="form-outline">
+          <input type="text" formControlName="work"  id="work" class="form-control" />
+          <label class="form-label" for="typeText">Work</label>
+        </div>
+      </li>
+      <li class="list-group-item px-3">
+        <div class="form-outline">
+          <input formControlName="mail"  type="text" id="mail" class="form-control" />
+          <label class="form-label" for="typeText">Mail</label>
+        </div>
+      </li>
+      <li class="list-group-item px-3">
+        <div class="form-outline">
+          <input type="text"  formControlName="adr" id="adress" class="form-control" />
+          <label class="form-label" for="typeText"> Adress</label>
+        </div>
+      </li>
+      <li class="list-group-item px-3">
+        <div class="form-outline">
+          <input type="text" formControlName="age"  id="age" class="form-control" />
+          <label class="form-label" for="typeText">Age</label>
+        </div>
+      </li>
+      <li class="list-group-item px-3">
+        <div class="form-outline">
+          <input type="file" formControlName="image"  id="age" class="form-control" (change)="eventhand($event)" />
+          <label class="form-label" for="typeText">Image</label>
+        </div>
+      </li>
+  
+  
+  
+      
+      <div class="form-outline">
+        <textarea class="form-control" formControlName="about"  id="about" rows="4"></textarea>
+        <label class="form-label" for="textAreaExample">About</label>
+      </div>
+      <br>
+      
+    </ul>
+    <button class="btn btn-success" type="submit">Valider</button>
+  </form>
 
-    <div class="form-outline">
-      <textarea class="form-control" formControlName="education"  id="education" rows="4"></textarea>
-      <label class="form-label" for="textAreaExample">Education</label>
-      <input id="dateDbEduc" type="date" value="2017-06-01">
-      <input id="dateFnEduc" type="date" value="2017-06-01">
-      <button class="btn btn-outline-success" type="button" id="button-addon2">Add</button>
 
-    </div>
-    <br>
+  
+  </div> 
 
     
-    <div class="form-outline">
-      <textarea class="form-control" formControlName="about"  id="about" rows="4"></textarea>
-      <label class="form-label" for="textAreaExample">About</label>
-    </div>
-    <br>
-    <button type="button" class="btn btn-primary">Button</button>
+    <li class="list-group-item px-3">
+      <form class="form-group" [formGroup]="form2" (ngSubmit)="onSubmit2()">
+        <div formArrayName="skillsArray"   >
+          <label class="form-label" for="typeText">Skills</label>
 
-    </ul>
+          <div *ngFor="let item of skillsArray.controls; let i = index" [formGroupName]="i">
+            <label class="form-label" for="skills{{i}}">Skills {{ i + 1 }}</label>
+            <input [className]="item.get('skills').invalid && (item.get('skills').dirty || item.get('skills').touched) ? 'form-control is-invalid':'form-control'" type="text" id="skills{{i}}" formControlName="skills">
+            <div *ngIf="item.get('skills').invalid && (item.get('skills').dirty || item.get('skills').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('skills').errors['required']">Skills is required</div>
+            </div>
+            <br>
+            <label class="form-label" for="level{{i}}">Level {{ i + 1 }}</label>
+            <input [className]="item.get('level').invalid && (item.get('level').dirty || item.get('level').touched) ? 'form-control is-invalid':'form-control'" type="text" id="level{{i}}" formControlName="level">
+            <div *ngIf="item.get('level').invalid && (item.get('level').dirty || item.get('level').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('level').errors['required']">Level is required</div>
+            </div>
+            <br>
+            <button class="btn btn-danger" type="button" (click)="removeSkill(i)">Remove Skill</button>
+            <hr>
+          </div>
+        </div>
+        <button class="btn btn-secondary mt-4" type="button" (click)="addSkill()">Add Skill</button>
+        <button class="btn btn-secondary mt-4" type="submit">Add</button>
+      </form>
+    </li>
+    <li class="list-group-item px-3">
+      <form class="form-group" [formGroup]="form3" (ngSubmit)="onSubmit3()">
+        <div formArrayName="professionel">
+          <label class="form-label" for="typeText">Experience</label>
+
+          <div *ngFor="let item of professionel.controls; let i = index" [formGroupName]="i">
+            <label class="form-label" for="title{{i}}">Title {{ i + 1 }}</label>
+            <input [ngClass]="{'form-control': true, 'is-invalid': item.get('title').invalid && (item.get('title').dirty || item.get('title').touched)}" type="text" id="title{{i}}" formControlName="title">
+            <div *ngIf="item.get('title').invalid && (item.get('title').dirty || item.get('title').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('title').errors['required']">Title is required</div>
+            </div>
+            <br>
+            <label class="form-label" for="dated{{i}}">Start Date {{ i + 1 }}</label>
+            <input [ngClass]="{'form-control': true, 'is-invalid': item.get('dated').invalid && (item.get('dated').dirty || item.get('dated').touched)}" type="date" id="dated{{i}}" formControlName="dated">
+            <div *ngIf="item.get('dated').invalid && (item.get('dated').dirty || item.get('dated').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('dated').errors['required']">Start date is required</div>
+            </div>
+            <label class="form-label" for="datef{{i}}">End Date {{ i + 1 }}</label>
+            <input [ngClass]="{'form-control': true, 'is-invalid': item.get('datef').invalid && (item.get('datef').dirty || item.get('datef').touched)}" type="date" id="datef{{i}}" formControlName="datef">
+            <div *ngIf="item.get('datef').invalid && (item.get('datef').dirty || item.get('datef').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('datef').errors['required']">End date is required</div>
+            </div>
+            <label class="form-label" for="description{{i}}">Description {{ i + 1 }}</label>
+            <textarea [ngClass]="{'form-control': true, 'is-invalid': item.get('description').invalid && (item.get('description').dirty || item.get('description').touched)}" type="text" id="description{{i}}" formControlName="description"></textarea>
+            <div *ngIf="item.get('description').invalid && (item.get('description').dirty || item.get('description').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('description').errors['required']">Description is required</div>
+            </div>
+            <br>
+            <button class="btn btn-danger" type="button" (click)="removeexp(i)">Remove</button>
+            <hr>
+          </div>
+        </div>
+        <button class="btn btn-secondary mt-4" type="button" (click)="addexp()">Add Experience</button>
+        <button class="btn btn-secondary mt-4" type="submit">Add</button>
+      </form>
+    </li>
+
+    <li class="list-group-item px-3">
+      <form class="form-group" [formGroup]="form4" (ngSubmit)="onSubmit4()">
+        <div formArrayName="Education">
+          <label class="form-label" for="typeText">Education</label>
+
+          <div *ngFor="let item of Education.controls; let i = index" [formGroupName]="i">
+            <label class="form-label" for="title{{i}}">Title {{ i + 1 }}</label>
+            <input [ngClass]="{'form-control': true, 'is-invalid': item.get('title').invalid && (item.get('title').dirty || item.get('title').touched)}" type="text" id="title{{i}}" formControlName="title">
+            <div *ngIf="item.get('title').invalid && (item.get('title').dirty || item.get('title').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('title').errors['required']">Title is required</div>
+            </div>
+            <br>
+            <label class="form-label" for="dated{{i}}">Start Date {{ i + 1 }}</label>
+            <input [ngClass]="{'form-control': true, 'is-invalid': item.get('dated').invalid && (item.get('dated').dirty || item.get('dated').touched)}" type="date" id="dated{{i}}" formControlName="dated">
+            <div *ngIf="item.get('dated').invalid && (item.get('dated').dirty || item.get('dated').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('dated').errors['required']">Start date is required</div>
+            </div>
+            <label class="form-label" for="datef{{i}}">End Date {{ i + 1 }}</label>
+            <input [ngClass]="{'form-control': true, 'is-invalid': item.get('datef').invalid && (item.get('datef').dirty || item.get('datef').touched)}" type="date" id="datef{{i}}" formControlName="datef">
+            <div *ngIf="item.get('datef').invalid && (item.get('datef').dirty || item.get('datef').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('datef').errors['required']">End date is required</div>
+            </div>
+            <label class="form-label" for="description{{i}}">Description {{ i + 1 }}</label>
+            <textarea [ngClass]="{'form-control': true, 'is-invalid': item.get('description').invalid && (item.get('description').dirty || item.get('description').touched)}" type="text" id="description{{i}}" formControlName="description"></textarea>
+            <div *ngIf="item.get('description').invalid && (item.get('description').dirty || item.get('description').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('description').errors['required']">Description is required</div>
+            </div>
+            <br>
+            <button class="btn btn-danger" type="button" (click)="removeEducation(i)">Remove</button>
+            <hr>
+          </div>
+        </div>
+        <button class="btn btn-secondary mt-4" type="button" (click)="addEducation()">Add Education</button>
+        <button class="btn btn-secondary mt-4" type="submit">Add</button>
+      </form>
+    </li>
+   
 
 
 
-  </form>
-  </div>
+
+
+
+
+
+   
+  <button type="button" class="btn btn-primary" (click)="sendData()">confirmer</button>

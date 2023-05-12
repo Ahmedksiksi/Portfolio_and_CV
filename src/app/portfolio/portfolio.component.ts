@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Profile } from '../models/Profile';
 import { DatamanageService } from '../datamanage.service';
+import { Profile } from '../models/Profile';
 import html2pdf from 'html2pdf.js';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-portfolio',
+  templateUrl: './portfolio.component.html',
+  styleUrls: ['./portfolio.component.css']
 })
-export class HomeComponent implements OnInit {
-  profile!: Profile;
+export class PortfolioComponent implements OnInit {
   constructor(private service:DatamanageService){}
+  profile!: Profile;
+
   data1:any
   html2pdf:any
   ngOnInit() {
     this.data1=JSON.parse(JSON.stringify(this.service.data))
     console.log(this.data1);
   }
-done(){
+  done(){
  
     const element = document.getElementById('w');
     const options = {
@@ -32,6 +33,4 @@ done(){
   
   
 }
-
-
 }

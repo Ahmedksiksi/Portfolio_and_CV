@@ -1,10 +1,32 @@
-<div class="form-outline">
-    <input type="email" id="typeEmail" class="form-control" />
-    <label class="form-label" for="typeEmail">Email </label>
-  </div>
-  <br>
+<form (ngSubmit)="submitForm()" [formGroup]="form" autocomplete="off">
+  <div style="display: flex; justify-content: center">
+    <div class="form-container">
+      <h1>Login</h1>
 
-  <div class="form-outline">
-    <input type="password" id="typePassword" class="form-control" />
-    <label class="form-label" for="typePassword">Password </label>
+      <!-- Username -->
+      <div>
+          <input
+            matInput
+            placeholder="Ex. profanis"
+            formControlName="username"
+          />
+      </div>
+      <!-- /Username -->
+
+      <!-- Password -->
+      <div>
+          <input
+            matInput
+            type="password"
+            placeholder="Ex. s3c3tP@ss"
+            formControlName="password"
+          />
+      </div>
+      <!-- /Password -->
+
+      <div>
+        <button type="submit" mat-raised-button color="primary">Login</button>
+      </div>
+    </div>
   </div>
+</form>
